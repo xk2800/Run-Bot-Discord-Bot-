@@ -75,6 +75,26 @@ async def on_message(message):
       encouragements = db["encouragements"]
     await message.channel.send(encouragements)
 
+
+  if message.content.startswith("$ShiJing"):
+      await message.channel.send('JingJing Jingle Your Bell')
+
+  if message.content.startswith("$KY"):
+    await message.channel.send('Eh KY when we having meeting ah ?')
+  
+  if message.content.startswith("$ping"):
+        await message.channel.send('You ping me ah? Sleeping leh')
+
+  if message.content.startswith("$hello"):
+    await message.channel.send('Eh Hi Hi, yes how can i help you?')
+
+  if message.content.startswith("its christmas"):
+      await message.channel.send('Merry Christmas')
+
+  if message.content.startswith("its cny"):
+    await message.channel.send('Happy Chinese New Year')
+
+
   if msg.startswith("$list"):
     encouragements = []
     if "encouragements" in db.keys():
@@ -90,18 +110,6 @@ async def on_message(message):
     else:
       db["responding"] = False
       await message.channel.send("Responding is off.")
-
-    if message.content.startswith("$ShiJing"):
-      await message.channel.send('JingJing Jingle Your Bell')
-
-    if message.content.startswith("$KY"):
-      await message.channel.send('Eh KY when we having meeting ah ?')
-    
-    if message.content.startswith("$ping"):
-          await message.channel.send('You ping me ah? Sleeping leh')
-
-    if message.content.startswith("$hello"):
-      await message.channel.send('Eh Hi Hi, yes how can i help you?')
 
 
 keep_alive()
