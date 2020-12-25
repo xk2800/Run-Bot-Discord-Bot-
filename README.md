@@ -28,5 +28,7 @@ $responding False
 
 
 Random Easter Eggs list:
+$ping
+$hello
 $ShiJing
 $KY
