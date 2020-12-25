@@ -10,7 +10,7 @@ $inspire
 ## Adding new message
 $new <new message>
 	
-## List all messages manully added
+## List all messages manually added
 $list
 
 ## Delete added messages
