@@ -1,4 +1,7 @@
 import discord
+#from discord.ext.commands import Bot
+from discord.ext import commands
+#import asyncio
 import os
 import requests
 import json
@@ -7,6 +10,7 @@ from replit import db
 from keep_alive import keep_alive
 
 client = discord.Client()
+
 
 sad_words = ["sad", "cry", "unhappy", "KY", "haih"]
 
@@ -41,15 +45,17 @@ def delete_encouragment(index):
 
 @client.event
 async def on_ready():
+  await client.change_presence(activity=discord.Game(name="Something in this server"))
   print('We have logged in as {0.user}'.format(client))
 
 @client.event
 async def on_message(message):
   if message.author == client.user:
     return
-
+    
   msg = message.content
 
+  
   if msg.startswith('$inspire'):
     quote = get_quote()
     await message.channel.send(quote)
@@ -93,6 +99,10 @@ async def on_message(message):
 
   if message.content.startswith("its cny"):
     await message.channel.send('Happy Chinese New Year')
+
+  if message.content.startswith("creator"):
+    await message.channel.send('Discord: holyboba#7665')
+
 
 
   if msg.startswith("$list"):
